@@ -19,7 +19,7 @@ function App() {
     
      
       <Routes>
-        <Route path='/signin' element={<SignInPage/>}/> 
+        <Route path='/' element={<SignInPage/>}/> 
         <Route path='/addprofile' element={<AddProfile/>}/> 
       </Routes>
      
