@@ -1,11 +1,40 @@
 
 import { MdOutlineEmail } from 'react-icons/md';
 import { CiLock } from 'react-icons/ci';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Sidebar from './Sidebar';
 
 function SignInPage() {
+  const [data,setData]=useState({
+    email:'',
+    password:''
+
+  })
+  let navigate=useNavigate();
+  const handleChange=(e)=>{
+    const { name, value } = e.target;
+    setData({
+      ...data,
+      [name]: value
+    });
+
+  }
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
-    // Implement form submission logic here if needed
+    event.preventDefault(); 
+    console.log(data);
+    const { email, password } = data; // Destructure email and password from data object
+
+    if (email === 'admin@gmail.com' && password === '12345') {
+     
+      setTimeout(() => {
+        navigate(<Sidebar/>);
+      }, 1500);
+    } else {
+      console.log("error login")
+      
+      }
+    
   };
 
   return (
@@ -155,6 +184,9 @@ function SignInPage() {
                 <div className="relative">
                   <input
                     type="email"
+                    name='email'
+                    value={data.email}
+                    onChange={handleChange}
                     placeholder="Enter your email"
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                   />
@@ -171,6 +203,10 @@ function SignInPage() {
                 <div className="relative">
                   <input
                     type="password"
+                    name='password'
+                    value={data.password}
+                    onChange={handleChange}
+
                     placeholder="6+ Characters, 1 Capital letter"
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                   />

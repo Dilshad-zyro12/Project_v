@@ -5,9 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const AddProfile = () => {
   const [beneficiaryName, setBeneficiaryName] = useState();
-  const [accNo, setAccNo] = useState('');
-  const [ifscCode, setIFSCCode] = useState('');
-  const [paymentMode, setPaymentMode] = useState('');
+  const [accNo, setAccNo] = useState();
+  const [ifscCode, setIFSCCode] = useState();
+  const [paymentMode, setPaymentMode] = useState();
   const paymentTypes = ['NEFT', 'IMPS', 'RTGS'];
 
   const handleSubmit = (e) => {

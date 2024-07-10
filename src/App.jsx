@@ -3,6 +3,7 @@ import Sidebar from './component/Sidebar';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
 import SignInPage from './component/SignInPage';
 import AddProfile from './component/AddProfile';
+import FormElement from './component/Form/FormElement';
 
 function App() {
   
@@ -14,13 +15,19 @@ function App() {
     <div className='lg:flex '>
 
    
-    <Sidebar />
     
+    <Sidebar/>
     
      
       <Routes>
-        <Route path='/signin' element={<SignInPage/>}/> 
+        <Route path='/' element={<SignInPage/>}/> 
         <Route path='/addprofile' element={<AddProfile/>}/> 
+        <Route path='/formelement' element={<FormElement/>}/> 
+        <Route path='/formlayout' element={<FormElement/>}/> 
+        
+
+       
+       
       </Routes>
      
  

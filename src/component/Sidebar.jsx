@@ -128,10 +128,10 @@ const Sidebar = () => {
               {formOpen && (
                 <ul className="ml-4 mt-2">
                   <li className="mb-1">
-                    <a href="#" className="block p-2 rounded hover:bg-gray-700">Forms Element</a>
+                    <Link to='/formelement' className="block p-2 rounded hover:bg-gray-700">Forms Element</Link>
                   </li>
                   <li className="mb-1">
-                    <a href="#" className="block p-2 rounded hover:bg-gray-700">Forms Layout</a>
+                    <Link to='/formlayout' className="block p-2 rounded hover:bg-gray-700">Forms Layout</Link>
                   </li>
                 </ul>
               )}
@@ -193,7 +193,7 @@ const Sidebar = () => {
               {authOpen && (
                 <ul className="ml-4 mt-2">
                   <li className="mb-1">
-                    <Link to="/signin" className="block p-2 rounded hover:bg-gray-700">Sign In</Link>
+                    <Link to="/" className="block p-2 rounded hover:bg-gray-700">Sign In</Link>
                   </li>
                   <li className="mb-1">
                     <Link to="/signup" className="block p-2 rounded hover:bg-gray-700">Sign Up</Link>
