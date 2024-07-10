@@ -1,8 +1,9 @@
 
 import Sidebar from './component/Sidebar';
 import { BrowserRouter, Routes,Route } from 'react-router-dom';
-import SignInPage from './component/SignInPage';
+// import SignInPage from './component/SignInPage';
 import AddProfile from './component/AddProfile';
+import LoginForm from './component/LoginForm/LoginForm';
 
 function App() {
   
@@ -15,11 +16,8 @@ function App() {
 
    
     <Sidebar />
-    
-    
-     
       <Routes>
-        <Route path='/' element={<SignInPage/>}/> 
+        <Route path='/' element={<LoginForm/>}/> 
         <Route path='/addprofile' element={<AddProfile/>}/> 
       </Routes>
      
