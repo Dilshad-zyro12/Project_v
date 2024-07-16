@@ -1,11 +1,28 @@
 
 import { MdOutlineEmail } from 'react-icons/md';
 import { CiLock } from 'react-icons/ci';
+import { useState } from 'react';
 
-function SignInPage() {
+
+
+function SignInPage({onLogin}) {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+ // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  //const navigate=useNavigate();
+  const handleEmailChange=(e)=>{
+    setEmail(e.target.value);
+  }
+  const handlePasswordChange=(e)=>{
+    setPassword(e.target.value);
+  }
   const handleSubmit = (event) => {
-    event.preventDefault(); // Prevent default form submission behavior
+    event.preventDefault(); 
+    onLogin(email, password);
+    // Prevent default form submission behavior
     // Implement form submission logic here if needed
+
+    
   };
 
   return (
@@ -156,6 +173,8 @@ function SignInPage() {
                   <input
                     type="email"
                     placeholder="Enter your email"
+                    value={email}
+                    onChange={handleEmailChange}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                   />
                   <span className="absolute right-4 top-4">
@@ -172,6 +191,8 @@ function SignInPage() {
                   <input
                     type="password"
                     placeholder="6+ Characters, 1 Capital letter"
+                    value={password}
+                    onChange={handlePasswordChange}
                     className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 text-black outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:text-white dark:focus:border-primary"
                   />
                   <span className="absolute right-4 top-4">

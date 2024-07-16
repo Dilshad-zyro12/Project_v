@@ -77,19 +77,12 @@ const Sidebar = () => {
               <div className="flex items-center justify-between w-full rounded hover:bg-gray-700 focus:outline-none">
                 <div className="flex items-center text-left p-2">
                   <RxDashboard className="mr-2" />
-                  <button className="" onClick={toggleSubmenu}>
+                  <Link to="/dashboard" className="" onClick={toggleSubmenu}>
                     Dashboard
-                  </button>
+                  </Link>
                 </div>
-                {submenuOpen ? <IoIosArrowUp className="mr-4" /> : <IoIosArrowDown className="mr-4" />}
-              </div>
-              {submenuOpen && (
-                <ul className="ml-4 mt-2">
-                  <li className="mb-1">
-                    <a href="#" className="block p-2 rounded hover:bg-gray-700">eCommerce</a>
-                  </li>
-                </ul>
-              )}
+                </div>
+             
             </li>
             <li className="mb-2">
               <div className="flex items-center w-full text-left p-2 rounded hover:bg-gray-700 focus:outline-none">
@@ -131,7 +124,7 @@ const Sidebar = () => {
                     <a href="#" className="block p-2 rounded hover:bg-gray-700">Forms Element</a>
                   </li>
                   <li className="mb-1">
-                    <a href="#" className="block p-2 rounded hover:bg-gray-700">Forms Layout</a>
+                    <Link to="/formlayout" className="block p-2 rounded hover:bg-gray-700">Forms Layout</Link>
                   </li>
                 </ul>
               )}
@@ -193,7 +186,7 @@ const Sidebar = () => {
               {authOpen && (
                 <ul className="ml-4 mt-2">
                   <li className="mb-1">
-                    <Link to="/signin" className="block p-2 rounded hover:bg-gray-700">Sign In</Link>
+                    <Link to="" className="block p-2 rounded hover:bg-gray-700">Sign In</Link>
                   </li>
                   <li className="mb-1">
                     <Link to="/signup" className="block p-2 rounded hover:bg-gray-700">Sign Up</Link>
